@@ -1,8 +1,8 @@
 # FILE NAME - firewall_traffic_analyzer.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Ethan Carson
+# DATE: 10/5/2025
+# BRIEF DESCRIPTION:  This program identifies potentiall risks in a firewall based on user input for port used and data transfer size.
 
 
 
@@ -14,7 +14,18 @@
 
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
-
+print('=== Network Traffic Security Analyzer ===\n')
+port = int(input('Enter the port number (e.g., 80, 22, 443, 3389): '))
+data_size = int(input('Enter the data transfer size in megabytes (MB): '))
+print(f'\nFIREWALL LOG:\nPort: {port}, Transfer Size: {data_size} MB')
+#Checks
+if (port == 22 or port == 3389) and data_size >= 100:
+    print('Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!\n------------------------')
+elif port == 80 and data_size > 100:
+    print('Risk Assessment: MEDIUM RISK: Large unencrypted data transfer detected.\n------------------------')
+elif port == 443:
+    print('Risk Assessment: LOW RISK: Secure encrypted transfer detected.\n------------------------')
+else: print('Risk Assessment: UNKNOWN: Unrecognized traffic pattern.\n------------------------')
 
 
 
@@ -90,7 +101,7 @@ Risk Assessment: UNKNOWN: Unrecognized traffic pattern.
 
 1. Did you get tripped up using the `or` or `and` operators? If so, how?
 
-
+Not really, no. Like I said last lab, they are more intuitive then they are in JS, and I understand those pretty well.
 
 
 
